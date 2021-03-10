@@ -1,0 +1,5 @@
+﻿  string.c
+C:\Users\qudwn\source\repos\자료구조\Project1\StringTest\string.c(37,8): warning C4101: 'p' :참조되지 않은 지역 변수입니다.
+C:\Users\qudwn\source\repos\자료구조\Project1\StringTest\string.c(35,7): warning C4101: 'buffer' :참조되지 않은 지역 변수입니다.
+C:\Users\qudwn\source\repos\자료구조\Project1\StringTest\string.c(34,8): warning C4101: 'words' :참조되지 않은 지역 변수입니다.
+  StringTest.vcxproj -> C:\Users\qudwn\source\repos\자료구조\Project1\x64\Debug\StringTest.exe

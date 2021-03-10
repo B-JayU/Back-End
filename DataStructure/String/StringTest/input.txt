@@ -1,0 +1,1 @@
+Umm... I dont know strdup();
