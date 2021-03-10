@@ -1,0 +1,4 @@
+﻿  phonebook_v2.c
+C:\Users\qudwn\source\repos\자료구조\Phonebook\phonebook_v2\phonebook_v2.c(76,7): warning C4101: 'name' :참조되지 않은 지역 변수입니다.
+C:\Users\qudwn\source\repos\자료구조\Phonebook\phonebook_v2\phonebook_v2.c(77,7): warning C4101: 'numbers' :참조되지 않은 지역 변수입니다.
+  phonebook_v2.vcxproj -> C:\Users\qudwn\source\repos\자료구조\Phonebook\Debug\phonebook_v2.exe
