@@ -1,0 +1,6 @@
+### Calculate length of String object
+
+if the string is empty
+	return 0;
+else
+	return 1 plus the length of the string that excludes the first character;
