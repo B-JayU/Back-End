@@ -1,0 +1,3 @@
+﻿  client.c
+C:\Users\qudwn\source\repos\TCP_IP\TCP Calculator\Calculator\Cal_Client\client.c(62,20): warning C4133: '함수': 'int *'과(와) 'char *' 사이의 형식이 호환되지 않습니다.
+  Cal_Client.vcxproj -> C:\Users\qudwn\source\repos\TCP_IP\TCP Calculator\Calculator\Debug\Cal_Client.exe

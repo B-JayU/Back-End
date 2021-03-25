@@ -1,0 +1,4 @@
+﻿  server.c
+C:\Users\qudwn\source\repos\TCP_IP\TCP Calculator\Calculator\Cal_Server.c\server.c(53,28): warning C4133: '함수': 'int *'과(와) 'char *' 사이의 형식이 호환되지 않습니다.
+C:\Users\qudwn\source\repos\TCP_IP\TCP Calculator\Calculator\Cal_Server.c\server.c(56,39): warning C4018: '>': signed 또는 unsigned가 일치하지 않습니다.
+  Cal_Server.c.vcxproj -> C:\Users\qudwn\source\repos\TCP_IP\TCP Calculator\Calculator\Debug\Cal_Server.c.exe
