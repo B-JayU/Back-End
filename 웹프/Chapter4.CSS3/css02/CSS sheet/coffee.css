@@ -1,0 +1,12 @@
+body{
+    background-color: yellow; /* 백그라운드 배경 색상 */
+    font-family: serif; /* 전체 폰트 */
+    color: black; /* 폰트 색상 */
+}
+h1{
+    border-bottom: 1px solid gray; /* 헤딩의 하단부 경계선 */
+    color : red;
+}
+
+p.first{ color : green;}
+p.second{ color: blue;}
