@@ -1,0 +1,6 @@
+﻿  inputTest.c
+C:\Users\qudwn\source\repos\자료구조\Linked LIst\Concept_Operation2\inputTest\inputTest.c(20,26): warning C4047: '함수': 'const char *'의 간접 참조 수준이 'char'과(와) 다릅니다.
+C:\Users\qudwn\source\repos\자료구조\Linked LIst\Concept_Operation2\inputTest\inputTest.c(20,20): warning C4024: 'strcmp': 형식 및 실제 매개 변수 2의 형식이 서로 다릅니다.
+C:\Users\qudwn\source\repos\자료구조\Linked LIst\Concept_Operation2\inputTest\inputTest.c(21,25): warning C4047: '함수': 'const char *'의 간접 참조 수준이 'char'과(와) 다릅니다.
+C:\Users\qudwn\source\repos\자료구조\Linked LIst\Concept_Operation2\inputTest\inputTest.c(21,19): warning C4024: 'strcmp': 형식 및 실제 매개 변수 2의 형식이 서로 다릅니다.
+  inputTest.vcxproj -> C:\Users\qudwn\source\repos\자료구조\Linked LIst\Concept_Operation2\Debug\inputTest.exe
