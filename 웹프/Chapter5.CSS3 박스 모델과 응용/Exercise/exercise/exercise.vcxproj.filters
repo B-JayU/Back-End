@@ -15,16 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="elem_size.html">
+    <None Include="ex06.html">
       <Filter>소스 파일</Filter>
     </None>
-    <None Include="css_resize.html">
+    <None Include="ex07.html">
       <Filter>소스 파일</Filter>
     </None>
-    <None Include="margin_padding.html">
+    <None Include="ex08.html">
       <Filter>소스 파일</Filter>
     </None>
-    <None Include="box_model.html">
+    <None Include="ex09.htm">
       <Filter>소스 파일</Filter>
     </None>
   </ItemGroup>

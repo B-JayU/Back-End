@@ -15,16 +15,31 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="elem_size.html">
+    <None Include="css_table.html">
       <Filter>소스 파일</Filter>
     </None>
-    <None Include="css_resize.html">
+    <None Include="css_table_back.html">
       <Filter>소스 파일</Filter>
     </None>
-    <None Include="margin_padding.html">
+    <None Include="css_table_color.html">
       <Filter>소스 파일</Filter>
     </None>
-    <None Include="box_model.html">
+    <None Include="css_table_size.html">
+      <Filter>소스 파일</Filter>
+    </None>
+    <None Include="css_table_align.html">
+      <Filter>소스 파일</Filter>
+    </None>
+    <None Include="css_table_vertical_align.html">
+      <Filter>소스 파일</Filter>
+    </None>
+    <None Include="css_table_caption.html">
+      <Filter>소스 파일</Filter>
+    </None>
+    <None Include="css_table_empty.html">
+      <Filter>소스 파일</Filter>
+    </None>
+    <None Include="css_table_alt.html">
       <Filter>소스 파일</Filter>
     </None>
   </ItemGroup>

@@ -15,16 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="elem_size.html">
+    <None Include="back_image1.html">
       <Filter>소스 파일</Filter>
     </None>
-    <None Include="css_resize.html">
-      <Filter>소스 파일</Filter>
-    </None>
-    <None Include="margin_padding.html">
-      <Filter>소스 파일</Filter>
-    </None>
-    <None Include="box_model.html">
+    <None Include="back_image2.html">
       <Filter>소스 파일</Filter>
     </None>
   </ItemGroup>

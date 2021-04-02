@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{6793d1b7-fe30-47a3-84f4-d00297d13898}</ProjectGuid>
-    <RootNamespace>MarginPadding</RootNamespace>
+    <ProjectGuid>{80400a76-831c-47fe-b19a-23bccddb136c}</ProjectGuid>
+    <RootNamespace>exercise</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,12 +139,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="box_model.html" />
-    <None Include="css_resize.html">
+    <None Include="ex06.html" />
+    <None Include="ex07.html" />
+    <None Include="ex08.html" />
+    <None Include="ex09.htm">
       <DeploymentContent>true</DeploymentContent>
     </None>
-    <None Include="elem_size.html" />
-    <None Include="margin_padding.html" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

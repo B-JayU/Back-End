@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{6793d1b7-fe30-47a3-84f4-d00297d13898}</ProjectGuid>
-    <RootNamespace>MarginPadding</RootNamespace>
+    <ProjectGuid>{54d8124d-4fb1-4e80-89ea-3b4d2bf3a90c}</ProjectGuid>
+    <RootNamespace>tableStyle</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,12 +139,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="box_model.html" />
-    <None Include="css_resize.html">
-      <DeploymentContent>true</DeploymentContent>
-    </None>
-    <None Include="elem_size.html" />
-    <None Include="margin_padding.html" />
+    <None Include="css_table.html" />
+    <None Include="css_table_align.html" />
+    <None Include="css_table_alt.html" />
+    <None Include="css_table_back.html" />
+    <None Include="css_table_caption.html" />
+    <None Include="css_table_color.html" />
+    <None Include="css_table_empty.html" />
+    <None Include="css_table_size.html" />
+    <None Include="css_table_vertical_align.html" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
