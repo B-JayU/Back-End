@@ -1,0 +1,20 @@
+﻿  polynomial.c
+C:\Users\qudwn\source\repos\자료구조\Linked LIst\polynomial\polynomial_Basic\polynomial.c(44,10): warning C4473: 'printf': 서식 문자열에 대한 인수가 충분하게 전달되지 않았습니다.
+C:\Users\qudwn\source\repos\자료구조\Linked LIst\polynomial\polynomial_Basic\polynomial.c(44,10): message : 자리 표시자 및 해당 매개 변수에는 variadic 인수가 1개 필요하지만 0개가 제공되었습니다.
+C:\Users\qudwn\source\repos\자료구조\Linked LIst\polynomial\polynomial_Basic\polynomial.c(44,10): message : 누락된 variadic 인수 1이(가) 서식 문자열 '%s'에 필요합니다.
+C:\Users\qudwn\source\repos\자료구조\Linked LIst\polynomial\polynomial_Basic\polynomial.c(45,16): warning C4013: 'read_line'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\qudwn\source\repos\자료구조\Linked LIst\polynomial\polynomial_Basic\polynomial.c(70,28): warning C4047: '함수': 'char *'의 간접 참조 수준이 'int'과(와) 다릅니다.
+C:\Users\qudwn\source\repos\자료구조\Linked LIst\polynomial\polynomial_Basic\polynomial.c(70,25): warning C4024: 'handle_calc': 형식 및 실제 매개 변수 2의 형식이 서로 다릅니다.
+C:\Users\qudwn\source\repos\자료구조\Linked LIst\polynomial\polynomial_Basic\polynomial.c(141,38): warning C4244: '+=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qudwn\source\repos\자료구조\Linked LIst\polynomial\polynomial_Basic\polynomial.c(221,41): warning C4047: '=': 'char *'의 간접 참조 수준이 'int'과(와) 다릅니다.
+C:\Users\qudwn\source\repos\자료구조\Linked LIst\polynomial\polynomial_Basic\polynomial.c(225,68): warning C4047: '함수': 'char *'의 간접 참조 수준이 'char'과(와) 다릅니다.
+C:\Users\qudwn\source\repos\자료구조\Linked LIst\polynomial\polynomial_Basic\polynomial.c(225,65): warning C4024: 'create_by_parse_polynomial': 형식 및 실제 매개 변수 2의 형식이 서로 다릅니다.
+C:\Users\qudwn\source\repos\자료구조\Linked LIst\polynomial\polynomial_Basic\polynomial.c(225,75): warning C4020: 'create_by_parse_polynomial': 실제 매개 변수가 너무 많습니다.
+C:\Users\qudwn\source\repos\자료구조\Linked LIst\polynomial\polynomial_Basic\polynomial.c(262,11): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\qudwn\source\repos\자료구조\Linked LIst\polynomial\polynomial_Basic\polynomial.c(265,12): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\qudwn\source\repos\자료구조\Linked LIst\polynomial\polynomial_Basic\polynomial.c(268,1): warning C4047: '초기화 중': 'int'의 간접 참조 수준이 'Term *'과(와) 다릅니다.
+C:\Users\qudwn\source\repos\자료구조\Linked LIst\polynomial\polynomial_Basic\polynomial.c(303,11): warning C4047: 'return': 'Term *'의 간접 참조 수준이 'int'과(와) 다릅니다.
+C:\Users\qudwn\source\repos\자료구조\Linked LIst\polynomial\polynomial_Basic\polynomial.c(312,11): warning C4047: 'return': 'Term *'의 간접 참조 수준이 'int'과(와) 다릅니다.
+C:\Users\qudwn\source\repos\자료구조\Linked LIst\polynomial\polynomial_Basic\polynomial.c(326,10): warning C4047: 'return': 'Term *'의 간접 참조 수준이 'int'과(와) 다릅니다.
+polynomial.obj : error LNK2019: _read_line_main 함수에서 참조되는 확인할 수 없는 외부 기호
+C:\Users\qudwn\source\repos\자료구조\Linked LIst\polynomial\Debug\polynomial_Basic.exe : fatal error LNK1120: 1개의 확인할 수 없는 외부 참조입니다.
