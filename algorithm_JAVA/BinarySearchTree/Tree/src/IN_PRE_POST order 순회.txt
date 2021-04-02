@@ -1,0 +1,27 @@
+이진트리의 In / Pre / Post order-순회
+
+INORDER-TREE-WALK(x){
+	if x != NULL {
+		INORDER-TREE-WALK(x->left);
+		print(x->key);
+		INORDER-TREE-WALK(x->right);
+	}
+}
+
+x를 루트로 하는 트리를 in_order 순회 => 시간복잡도 O(n);
+
+PREORDER-TREE-WALK(x){
+	if x != NULL {
+		print(x->key);
+		PREORDER-TREE-WALK(x->left);
+		PREORDER-TREE-WALK(x->right);
+	}
+}
+
+POSTORDER-TREE-WALK(x){
+	if x != NULL {
+		POSTORDER-TREE-WALK(x->left);
+		POSTORDER-TREE-WALK(x->right);
+		print(x->key);
+	}
+}

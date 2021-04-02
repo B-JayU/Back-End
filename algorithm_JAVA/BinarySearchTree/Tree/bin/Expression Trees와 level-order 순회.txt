@@ -1,0 +1,27 @@
+Expression Trees
+	- Expression 트리를 inorder 순회
+	
+	- 각 부트리를 순회할 때 시작과 종료시에 괄호를 추가하면 올바른 수식이 출력됨.
+	- postorder 순회하면 후위표기식이 출력됨.
+	
+level-order 순회
+	- 레벨 순으로 방문, 동일 레벨에서는 왼쪽에서 오른쪽 순서로
+	- 큐(queue)를 이용하여 구현한다.
+	
+	- 루트노드를 큐에 넣기
+	- 출력한다.
+	- 루트노드의 왼쪽 자식과 오른쪽 자식을 큐에 넣기
+	- 큐에서 하나를 뽑아 출력한다. 
+	- 뽑은 노드의 자식노드를 순서대로 큐에 넣는다.
+	- 또 다시 큐에서 하나를 뽑는다.
+	- 이과정을 큐에 비어있는 상태가 될 때 까지 반복한다.
+	
+	LEVEL-ORDER-TREE-TRAVERSAL(){
+		visit the root;
+		Q <- root;
+		while(Q is not empty){
+			v <- dequeue(Q);
+			visit childern of v;
+			enqueue children of v into Q;
+		}
+	}
