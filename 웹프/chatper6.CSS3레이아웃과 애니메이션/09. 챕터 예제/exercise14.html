@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>상대 위치 결정하기-div</title>
+        <style>
+            
+            div{
+                text-align:center;
+                line-height:200px;
+            }
+
+            #container {
+                position: relative;
+                left: 20px;
+                width: 400px;
+                height: 400px;
+                border: 5px solid green;
+            }
+
+            #box1 {
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                width:200px;
+                height: 200px;
+                background-color:lightpink;
+                border: 1px solid green;
+            }
+
+            #box2 {
+                position: absolute;
+                right: 0px;
+                top: 0px;
+                width:200px;
+                height: 200px;
+                background-color:plum;
+                border: 1px solid green;
+            }
+
+            #box3 {
+                position: absolute;
+                left: 0px;
+                bottom: 0px;
+                width:200px;
+                height: 200px;
+                background-color:lightgreen;
+                border: 1px solid green;
+            }
+
+            #box4 {
+                position: absolute;
+                right: 0px;
+                bottom: 0px;
+                width:200px;
+                height: 200px;
+                background-color:lightsteelblue;
+                border: 1px solid green;
+            }
+            
+
+
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="box1">left:0;top:0</div>
+            <div id="box2">right:0;top:0</div>
+            <div id="box3">left:0;bottom:0</div>
+            <div id="box4">right:0;bottom:0</div>
+        </div>
+    </body>
+</html>

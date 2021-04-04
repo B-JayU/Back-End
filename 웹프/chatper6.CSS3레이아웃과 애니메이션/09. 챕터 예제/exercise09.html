@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS 변환 효과</title>
+        <style>
+            div {
+                background-color: red;
+                width: 100px;
+                height: 100px;
+                transition: transform 1s;
+                -webkit-transition: -webkit-transform 1s;
+            }
+
+            div:hover{
+                width: 200px;
+                height: 200px;
+                background-color: yellow;
+                transform: rotate(360deg);
+                -webkit-transform: rotate(360deg);
+            }
+        </style>
+    </head>
+    <body>
+        <div> </div>
+    </body>
+</html>
