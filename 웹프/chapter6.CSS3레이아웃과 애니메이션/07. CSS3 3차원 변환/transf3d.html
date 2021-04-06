@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS3 3차원 변환</title>
+        <style>
+            div { /* 공통속성 */
+                background-color: green;
+                height: 150px;
+                width: 150px;
+            }
+
+            .container { /* contatiner 속성 */
+                background-color: yellow;
+                border: 1px solid black;
+            }
+
+            .transformed{ /* 3차원 변환 속성 */
+                backface-visibility: visible;
+                transform-origin: 50% 42%;
+                transform: perspective(500px) rotateY(59deg) rotateX(0deg);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="transformed"></div>
+        </div>
+    </body>
+</html>

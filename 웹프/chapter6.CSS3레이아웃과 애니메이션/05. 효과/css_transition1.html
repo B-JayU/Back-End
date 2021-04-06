@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>다중전환</title>
+        <style>
+            p {
+                width: 100px;
+                height: 50px;
+                border: 1px solid black;
+                background-color: yellow;
+                transition: width 5s height 5s border 5s, transform 5s;
+                -webkit-transition: width 5s, height 5s, border 5s, -webkit-transform 5s;
+            }
+
+            p:hover {
+                width : 200px;
+                height : 100pxx;
+                border : 10px solid red;
+                transform: rotate(360deg);
+                -webkit-transform: rotate(360deg);
+            }
+        </style>
+    </head>
+    <body>
+        <p>마우스를 올려보세요.</p>
+    </body>
+</html>
