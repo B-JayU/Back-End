@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var msg = "";
+            var time = new Date().getHours();
+
+            if (time < 12)
+                msg = "Good morning";
+            else if (time >= 12 && time < 18)
+                msg = "Good afternoon";
+            else
+                msg = "Good evening";
+            
+                alert(msg);
+        </script>
+    </head>
+</html>

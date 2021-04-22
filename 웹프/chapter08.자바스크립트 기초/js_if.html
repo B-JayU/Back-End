@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function greeting(){
+                var time = document.getElementById("hour").value;
+                var msg = "";
+
+                var h = parseInt(time);
+                if (h < 12)
+                    msg = "Good Morning";
+                else if (h >= 12 && h < 18)
+                    msg = "Good Afternoon";
+                else
+                    msg = "Good evening";
+
+                alert(msg);
+            }
+        </script>
+    </head>
+    <body>
+        <h3>인사하기</h3>
+        <form name="today" action="..." method="POST">
+            시간을 입력하세요 : 
+            <input type="number" id="hour" min="0" max="23">
+            <button type="button" value="확인" onclick="greeting()">확인</button>
+        </form>
+    </body>
+</html>
