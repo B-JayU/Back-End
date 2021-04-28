@@ -17,7 +17,10 @@ void process_command(void);
 void handle_add(void);
 void handle_status(void);
 void handle_load(void);
-void load(FILE *fp);
+void handle_search(void);
+void handle_play(void);
+void handle_save(void);
+//void load(FILE *fp);
 
 int main(int argc, const char * argv[]) {
     
@@ -25,7 +28,10 @@ int main(int argc, const char * argv[]) {
     // artist_directory 에 sNode들을 연결해서 길게 연장해서 뻗어나가기
     // artist 단방향 연결리스트
     
+    // artist_directory 연결리스트 초기화하기
     initialize();
+    
+    // 초기 파일 컨텐츠 업로드 하기
     handle_load();
     process_command();
     
@@ -48,6 +54,7 @@ void handle_load(){
     }
     
     load(fp);
+    printf("File load succeeded\n");
     fclose(fp);
 }
 
@@ -66,19 +73,52 @@ void process_command(void)
         if (strcmp(command, "add") == 0)
             handle_add();
         
-//        else if(strcmp(command, "search") == 0)
-//            handle_search();
+        else if(strcmp(command, "search") == 0)
+            handle_search();
 //        else if(strcmp(command, "remove") == 0)
 //            handle_remove();
-          else if(strcmp(command, "status") == 0)
-                handle_status();
-//        else if(strcmp(command, "play") == 0)
-//            handle_play();
-//        else if(strcmp(command, "save") == 0)
-//            handle_save();
+        else if(strcmp(command, "status") == 0)
+            handle_status();
+        else if(strcmp(command, "play") == 0)
+            handle_play();
+        else if(strcmp(command, "save") == 0){
+            char *tmp = strtok(NULL, " ");
+            if (strcmp(tmp, "as") != 0)
+                continue;
+            handle_save();
+        }
+            
         else if (strcmp(command, "exit") == 0)
             break;
     }
+}
+
+void handle_save(void){
+    
+    char *file_name = strtok(NULL, " ");
+    FILE *fp = fopen(file_name, "w");
+    save(fp);
+    fclose(fp);
+}
+
+void handle_search(void){
+    
+    char name[BUFFER_SIZE], title[BUFFER_SIZE];
+    
+    printf("    Artist: ");
+    if (read_line(stdin, name, BUFFER_SIZE) <= 0) {
+        printf("    Artist name required.\n");
+        return;
+    }
+    
+    printf("    Title: ");
+    read_line(stdin, title, BUFFER_SIZE);
+    
+    if (strlen(title) <= 0)
+        search_songA(name);
+    else
+        search_song(name, title);
+    
 }
 
 void handle_add(void) {
@@ -108,4 +148,11 @@ void handle_add(void) {
 
 void handle_status(void){
     status();
+}
+
+void handle_play(){
+    
+    char *id_str = strtok(NULL, " ");
+    int index = atoi(id_str);
+    play(index);
 }

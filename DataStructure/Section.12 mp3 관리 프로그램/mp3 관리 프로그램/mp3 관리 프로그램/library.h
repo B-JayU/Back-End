@@ -54,6 +54,11 @@ int remove_song(void);
 void status(void);
 void print_artist(Artist *p);
 void print_song(Song *ptr_song);
+void search_song(char *artist, char *title);
+void search_songA(char *artist);
+SNode *find_snode(Artist *ptr_artist, char *title);
+void play(int index);
+void save(FILE *fp);
 
 void load(FILE *fp);
 

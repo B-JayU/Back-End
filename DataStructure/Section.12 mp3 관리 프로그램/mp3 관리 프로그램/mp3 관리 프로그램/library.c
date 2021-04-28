@@ -11,10 +11,19 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
+// #include <windows.h>
 
 #define NUM_CHARS 256
+#define SIZE_INDEX_TABLE 100
 #define BUFFER_LENGTH 200
 Artist *artist_directory[NUM_CHARS];
+SNode *index_directory[SIZE_INDEX_TABLE];
+void insert_to_index_directory(Song *ptr_song);
+SNode *find_song_index(int index);
+void save_artist(Artist *p, FILE *fp);
+void save_song(Song *ptr_song, FILE *fp);
+
+
 int num_index = 0;
 
 void initialize(void){
@@ -22,38 +31,102 @@ void initialize(void){
     // 가수들을 동일한 이니셜 단위로 묶어서 연결리스트를 구성함.
     for (int i = 0; i < NUM_CHARS; i++)
         artist_directory[i] = NULL;
+    
+    for (int i = 0; i < SIZE_INDEX_TABLE; i++)
+        index_directory[i] = NULL;
+    
 }
 
 void load(FILE *fp){
     
     char buffer[BUFFER_LENGTH];
-    char *name, *title, *path;
+    char *name=NULL , *title=NULL, *path=NULL;
     
     while(1) {
-        printf("$ ");
+        //printf("$ ");
         
-        if (read_line(stdin, buffer, BUFFER_LENGTH) <= 0)
+        if (read_line(fp, buffer, BUFFER_LENGTH) <= 0)
             break;
         
         name = strtok(buffer, "#");
-        if (!strcmp(name, " "))
-            name = NULL;
-        else
+//        if (!strcmp(name, " "))
+//            name = NULL;
+//        else
+//            name = strdup(name);
+        
+        if (name != NULL)
             name = strdup(name);
+        else
+            name = "\0";
+        
+        
+//        title = strtok(NULL, "#");
+//        if (!strcmp(title, " "))
+//            title = NULL;
+//        else //
+//            title = strdup(title);
         
         title = strtok(NULL, "#");
-        if (!strcmp(name, " "))
-            title = NULL;
-        else
+        if (title != NULL)
             title = strdup(title);
+        else
+            title = "\0";
         
         path = strtok(NULL, "#");
-        if (!strcmp(name, " "))
-            path = NULL;
+        if (path != NULL)
+            path = strdup(path);
         else
-            path = strdup(name);
+            path = "\0";
     
-        printf("%s %s %s\n", name, title, path);
+        //printf("%s %s %s\n", name, title, path);
+        add_song(name, title, path);
+        
+    }
+}
+
+void search_song(char *artist, char *title){
+    
+    Artist *ptr_artist = find_artist(artist);
+    if (ptr_artist == NULL){
+        printf("No such artist exists.\n");
+        return;
+    }
+    
+    SNode *ptr_snode = find_snode(ptr_artist, title);
+    
+    if (ptr_snode != NULL){
+        printf("Found:\n");
+        print_song(ptr_snode->song);
+    }
+    else {
+        printf("No such song exists.\n");
+        return;
+    }
+}
+
+void search_songA(char *artist){
+    
+    Artist *ptr_artist = find_artist(artist);
+    if (ptr_artist == NULL){
+        printf("No such artist exists.\n");
+        return;
+    }
+    
+    printf("Found:\n");
+    print_artist(ptr_artist);
+    
+}
+
+SNode *find_snode(Artist *ptr_artist, char *title) {
+    
+    SNode *ptr_snode = ptr_artist->head;
+    while (ptr_snode != NULL && strcmp(ptr_snode->song->title, title) < 0)
+        ptr_snode = ptr_snode->next;
+    
+    if (ptr_snode != NULL && strcmp(ptr_snode->song->title, title) == 0){
+        return ptr_snode;
+    }else {
+        return NULL;
     }
 }
 
@@ -66,7 +139,7 @@ Artist* find_artist(char* name){
     if (p == NULL)
         return NULL;
     
-    while (strcmp(p->name,name) < 0){ // 
+    while (p != NULL && strcmp(p->name,name) < 0){ //
         p=p->next;
     }
     
@@ -118,8 +191,8 @@ Song *create_song_instance(Artist *ptr_artist, char *title, char *path){
     ptr_song->artist = ptr_artist;
     ptr_song->title = title;
     ptr_song->path = path;
-    ptr_song->index = num_index;
-    num_index++;
+    ptr_song->index = ++num_index;
+    //++num_index;
     return ptr_song;
 }
 
@@ -178,7 +251,36 @@ void add_song(char *artist, char *title, char *path){
     
     //insert node
     insert_node(ptr_artist, ptr_snode);
+    insert_to_index_directory(ptr_song);
 }
+
+void insert_to_index_directory(Song *ptr_song){
+    SNode *ptr_snode = (SNode *)malloc(sizeof(SNode));
+    ptr_snode->song = ptr_song;
+    ptr_snode->next = NULL;
+    ptr_snode->prev = NULL; // unused
+    
+    int index = ptr_song->index % SIZE_INDEX_TABLE;
+    
+    // add the snode into the single linked list at index_table[index]
+    
+    SNode *p = index_directory[index];
+    SNode *q = NULL;
+    while (p!=NULL && strcmp(p->song->title, ptr_song->title) < 0){
+        q = p;
+        p = p->next;
+    }
+    if (q == NULL){ // add_first
+        ptr_snode->next = p;
+        index_directory[index] = ptr_snode;
+    }
+    else { // add_after q
+        ptr_snode->next = p;
+        q->next = ptr_snode;
+    }
+    
+}
+
 void print_song(Song *ptr_song){
     printf("    %d: %s, %s\n", ptr_song->index, ptr_song->title, ptr_song->path);
 }
@@ -202,12 +304,65 @@ void status(void){
     }
 }
 
-
-void find_song(){
+SNode *find_song_index(int index) {
     
+    SNode *ptr_snode = index_directory[index%SIZE_INDEX_TABLE];
+    while (ptr_snode != NULL && ptr_snode->song->index != index)
+        ptr_snode = ptr_snode->next;
+    
+    return ptr_snode;
+}
+
+void play(int index) {
+    
+    SNode *ptr_snode = find_song_index(index);
+    if (ptr_snode == NULL) {
+        printf("No such song exist.\n");
+    }
+    
+    printf("Found the song: %s", ptr_snode->song->title);
+    //ShellExcute(GetDesktopWindow(), "open", ptr_snode->song->path, NULL, NULL, SW_SHOW);
 }
 
 int remove_song(){
     
     return 0;
+}
+
+void save(FILE *fp){
+    
+    for (int i = 0; i < NUM_CHARS; i++) {
+        Artist *p = artist_directory[i];
+        while(p != NULL) {
+            save_artist(p, fp);
+            p = p->next;
+        }
+    }
+}
+
+void save_artist(Artist *p, FILE *fp) {
+    printf("%s\n", p->name);
+    SNode *ps = p->head;
+    while(ps != NULL){
+        save_song(ps->song, fp);
+        ps = ps->next;
+    }
+}
+
+void save_song(Song *ptr_song, FILE *fp) {
+    
+    if (ptr_song->artist != NULL)
+        fprintf(fp, "%s#", ptr_song->artist->name);
+    else
+        fprintf(fp, " #");
+    
+    if (ptr_song->title != NULL)
+        fprintf(fp, "%s#", ptr_song->title);
+    else
+        fprintf(fp, " #");
+    
+    if (ptr_song->path != NULL)
+        fprintf(fp, "%s#\n", ptr_song->path);
+    else
+        fprintf(fp, "#\n");
 }
