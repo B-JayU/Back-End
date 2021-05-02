@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            function Car(model, speed, color){
+                this.model = model;
+                this.speed = speed;
+                this.color = color;
+
+                this.brake = function () {
+                    this.speed -= 10;
+                }
+                this.accel = function () {
+                    this.speed += 10;
+                }
+            }
+            myCar = new Car("520d", 60, "red");
+            document.write("¸ðµ¨:" + myCar.model + " ¼Óµµ:" + myCar.speed + "<br />");
+            myCar.accel();
+            document.write("¸ðµ¨:" + myCar.model + " ¼Óµµ:" + myCar.speed + "<br />");
+            myCar.brake();
+            document.write("¸ðµ¨:" + myCar.model + " ¼Óµµ:" + myCar.speed + "<br />");
+        </script>
+    </body>
+</html>
