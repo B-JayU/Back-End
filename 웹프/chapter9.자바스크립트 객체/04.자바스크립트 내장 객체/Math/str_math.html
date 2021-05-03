@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function sin(){
+                x = Number(document.getElementById("num").value);
+                y = Math.sin(x);
+                document.calculator.result.value = y;
+            }
+
+            function log(){
+                x = Number(document.getElementById("num").value);
+                y = Math.log(x);
+                document.calculator.result.value = y;
+            }
+
+            function sqrt(){
+                x = Number(document.getElementById("num").value);
+                y = Math.sqrt(x);
+                document.calculator.result.value = y;
+            }
+
+            function abs(){
+                x = Number(document.getElementById("num").value);
+                y = Math.abs(x);
+                document.calculator.result.value = y;
+            }
+        </script>
+    </head>
+    <body>
+        <form name = "calculator">
+            입력 : <input type="text" id="num"><br />
+            계산 결과 : <input type="text" id="result"><br />
+            <button value="SIN" onclick="sin()">SIN</button>
+            <button value="LOG" onclick="log()" >LOG</button>
+            <button value="SQRT" onclick="sqrt()">SQRT</button>
+            <button value="ABS" onclick="abs()">ABS</button>
+        </form>
+    </body>
+</html>
