@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function strCap() {
+                var s = document.getElementById("init").value;
+                var s1 = s.substr(0,1);
+                var result = s1.toUpperCase();
+                s1 = s.substr(1,s.length);
+                result = result.concat(s1);
+
+                alert(result);
+                
+            }
+        </script>
+    </head>
+    <body>
+        <h2>문자열 반환하기</h2></h1>
+        문자열을 입력하세요 </br>
+        입력값 : <input id="init" type="text"> 
+        <button type="button" onclick="strCap()">변환</button></br>
+        <!-- 변환값 : <p id="result"> </p> -->
+    </body>
+</html>
