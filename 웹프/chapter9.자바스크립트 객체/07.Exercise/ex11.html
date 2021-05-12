@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <div id='timenow'></div>
+        <script>
+            
+            function printDate(){
+                var now = new Date();
+
+                var month = now.getMonth() + 1;
+                var day = now.getDate();
+                var hour = now.getHours();
+                var minute = now.getMinutes();
+                var second = now.getSeconds();
+
+                var str = month + "월" + day +"일" + hour + "시" + minute + "분" + second + "초";
+                //document.writeln(str);
+                document.getElementById('timenow').innerHTML = str;
+
+                setTimeout("printDate()", 3000);
+
+                //document.writeln(month + "월" + day + "일");
+            }
+            
+            printDate();
+        </script>
+    </head>
+</html>
