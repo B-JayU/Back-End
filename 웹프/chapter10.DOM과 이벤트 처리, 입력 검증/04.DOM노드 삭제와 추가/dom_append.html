@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function addText(t) {
+                if (document.createTextNode) {  //  노드 생성 기능이 지원되면
+                    var node = document.createTextNode(t); // 새로운 노드를 생성하고
+                    //document.getElementById("target").appendChild(node) // 부모 노드의 자식으로 추가
+                    document.getElementById("target").insertBefore(node, document.getElementById("target").firstChild);
+                }
+            }
+        </script>
+    </head>
+    <body>
+    
+        
+        <!-- 새로운 노드 추가하기 => function 호출하기  -->
+        <div id="target" onclick="addText('동적으로 텍스트가 추가됩니다.')" style="font: 20px bold;">여기를 클릭하세요.</div>
+         
+    </body>
+</html>
