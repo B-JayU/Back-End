@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function OnButtonDown(button){
+                button.style.backgroundColor="#ff0000";
+            }
+            function OnButtonUp(button){
+                button.style.backgroundColor="#ffffff";
+            }
+        </script>
+    </head>
+    <body>
+        <input type="button" value="눌러보세요!" onmousedown="OnButtonDown(this)" onmouseup="OnButtonUp(this)">
+    </body>
+</html>
