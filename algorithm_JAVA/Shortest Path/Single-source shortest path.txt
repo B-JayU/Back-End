@@ -1,0 +1,28 @@
+# Single-source 최단경로문제 
+- 입력 : 음수 사이클이 없는 가중치 방향그래프 G=(V,E)와 출발 노드 s E v
+- 목적 : 각 노드 v E V 에 대해서 다음을 계산한다.
+	- d[v]
+		- 처음에는 d[s] = 0, d[v] = (INFINITE)로 시작한다. 
+		- 알고리즘의 진행됨에 따라서 감소해간다. 최종적으로 d[v] = (s,v)의 최단 경로
+		- ㅠ[v] = s에서 v까지의 최단경로상에서 v의 직전 노드(predecessor)
+			- 그런 노드가 없는 경우 ㅠ[v] = NIL.
+			
+- 기본연산 : relation(u, v, w) 
+	if d[v] > d[u] + w(u,v)
+		then d[v] = d[u] + w(u,v)
+			ㅠ(v) = u
+			
+- 대부분의 single-source 최단경로 알고리즘의 기본 구조
+	- 1. 초기화: d[s] = 0, 노드 v != s에 대해서 d[v] = (INFINITE), ㅠ[v] = NIL;
+	- 2. 에지들에 대한 반복적인 relaxation
+- 알고리즘들 간의 차이는 어떤 에지에 대해서 어떤 순서로 relaxation을 하느냐에 있음
+
+- 기본 알고리즘
+Generic-Single-Source(G,w,s)
+INITIALISE-SINGLE-SOURCE(G,s)
+repeat
+	for each edge(u,v) E E
+		RELAX(w, v, w)
+	until there is no change;
+
+			
